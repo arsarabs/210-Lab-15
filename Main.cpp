@@ -35,6 +35,14 @@ public:
 	void setMovieTitle(const string& movieTitle);
 
 	//GETTERS
+	string getScreenWriter() const;
+	int getYearReleased() const;
+	string getMovieTitle() const;
 
-	
+	//Print() - main purpose is to print
+	void print() const;
 };
+
+//STEP #2: Function Definitions
+//Movie() default constructor
+Movie::Movie() : yearReleased(0) {}
