@@ -22,7 +22,7 @@ private:
 public:
 	//Construtor
 	Movie();
-	Movie(const string& screenWriter, int year, const string& movieTitle);
+	Movie(const string& movieTitle, int year, const string& screenWriter);
 	 
 	//SETTERS
 	void setScreenWriter(const string& screenWriter);
@@ -60,8 +60,8 @@ Movie::Movie() : yearReleased(0) {}
 
 //Now, let's create a Movie() parameterized constructor arguments: screen writer (string), year released (int), movie title (string)
 //also, it doesn't return anything
-Movie::Movie(const string& writer, int year, const string& title): 
-	screenWriter(writer), yearReleased(year), movieTitle(title) {}
+Movie::Movie(const string& title, int year, const string& writer):
+	movieTitle(title), yearReleased(year), screenWriter(writer) {}
 
 //STEP #2b: Setter Definitions
 //setScreenWriter() sets writer's name, returns nothing, arugment is writer (string)
@@ -93,9 +93,9 @@ string Movie::getMovieTitle() const {
 //STEP #2d: Print() outputs the detials of said movie, 
 //and it doesnt have any arguments nor does it return anything
 void Movie::print() const {
-	cout << "Screenwriter: " << screenWriter << endl;
-	cout << "Year released: " << yearReleased << endl;
 	cout << "Movie: " << movieTitle << endl;
+	cout << "Year released: " << yearReleased << endl;
+	cout << "Screenwriter: " << screenWriter << endl;
 }
 
 //STEP #3b: Function Definitions for reading from file and outputting 
@@ -110,8 +110,8 @@ bool readMovies(vector<Movie>& movies, const string& filename) {
 	int year;
 
 	//need to create a while loop that will read and populate the movie objects
-	while (getline(inputFile, writer) && (inputFile >> year), (inputFile.ignore()) && getline(inputFile, writer)) {
-		Movie tempMovie(writer, year, title);
+	while (getline(inputFile, title) && (inputFile >> year), (inputFile.ignore()) && getline(inputFile, writer)) {
+		Movie tempMovie(title, year, writer);
 		movies.push_back(tempMovie);
 	}
 	inputFile.close();
