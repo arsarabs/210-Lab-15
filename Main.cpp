@@ -46,3 +46,15 @@ public:
 //STEP #2: Function Definitions
 //Movie() default constructor
 Movie::Movie() : yearReleased(0) {}
+
+//Now, let's create a Movie() parameterized constructor arguments: screen writer (string), year released (int), movie title (string)
+//also, it doesn't return anything
+Movie::Movie(const string& writer, int year, const string& title): 
+	screenWriter(writer), yearReleased(year), movieTitle(title) {}
+
+//We're getting into the setters now
+
+//setScreenWriter() sets writer's name, returns nothing, arugment is writer (string)
+void setScreenWriter(const string& writer) {
+	this->screenWriter = writer;
+}
