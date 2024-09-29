@@ -56,5 +56,5 @@ Movie::Movie(const string& writer, int year, const string& title):
 
 //setScreenWriter() sets writer's name, returns nothing, arugment is writer (string)
 void setScreenWriter(const string& writer) {
-	this->screenWriter = writer;
+	this->screenWriter = writer; 
 }
