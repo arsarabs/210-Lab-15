@@ -67,3 +67,18 @@ void setYearReleased(const int year) {
 void setMovieTitle(const string& movieTitle) {
 	this->movieTitle = movieTitle;
 }
+
+//GETTERS
+
+//getScreenWriter() returns screen writer name, has no arguments
+string Movie::getScreenWriter() const {
+	return;
+}
+//getScreenWriter() returns screen writer name, has no arguments
+string Movie::getScreenWriter() const {
+	return;
+}
+//getScreenWriter() returns screen writer name, has no arguments
+string Movie::getScreenWriter() const {
+	return;
+}
