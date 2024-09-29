@@ -28,7 +28,7 @@ public:
 	//Construtor
 	Movie();
 	Movie(const string& screenWriter, int year, const string& movieTitle);
-
+	 
 	//SETTERS
 	void setScreenWriter(const string& screenWriter);
 	void setYearReleased(const int year);
