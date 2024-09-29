@@ -74,11 +74,18 @@ void setMovieTitle(const string& movieTitle) {
 string Movie::getScreenWriter() const {
 	return;
 }
-//getScreenWriter() returns screen writer name, has no arguments
-string Movie::getScreenWriter() const {
+//getYearReleased() returns year released, has no arguments
+int Movie::getYearReleased() const {
 	return;
 }
-//getScreenWriter() returns screen writer name, has no arguments
-string Movie::getScreenWriter() const {
+//getMovieTitle() returns movie title, has no arguments
+string Movie::getMovieTitle() const {
 	return;
+}
+
+//Print() outputs the detials of said movie, and it doesnt have any arguments nor does it return anything
+void Movie::print() const {
+	cout << "Screenwriter: " << screenWriter << endl;
+	cout << "Year released: " << yearReleased << endl;
+	cout << "Movie: " << movieTitle << endl;
 }
