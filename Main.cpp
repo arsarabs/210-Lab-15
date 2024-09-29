@@ -7,14 +7,6 @@
 
 using namespace std;
 
-//ASSIGNMENT INSTUCTIONS
-//Code a Movie class that has the screen writer, the year released, and the title as its private member variables.
-//It has the standard setters and getters for each private member variable.Also code a print() method which prints the object data in a simple format.
-//Your code should read data from an input file, using the data below, which lists data in this order : title, year released, screen writer name.
-//Read this data into a temporary Movie object.Then append that object to your container.
-//For your container, you can choose an <array> class array or a <vector> class vector.
-//Store your four records in this container. Towards the end of your main() function, output the contents of the array / vector.
-
 //Define constant
 const string FILE_INPUT = "input.txt";
 
@@ -50,6 +42,18 @@ public:
 bool readMovies(vector<Movie>& movies, const string& filename);
 void outputMovies(const vector <Movie>& movies);
 
+//STEP 4: main()
+int main() {
+	vector <Movie> movies;
+
+	if (!readMovies(movies, FILE_INPUT)) {
+		cout << "Failed to load movies from file " << endl;
+		return 1;
+	}
+	outputMovies(movies);
+	return 0;
+}
+
 //STEP #2a: Function Definitions
 //Movie() default constructor
 Movie::Movie() : yearReleased(0) {}
@@ -61,15 +65,15 @@ Movie::Movie(const string& writer, int year, const string& title):
 
 //STEP #2b: Setter Definitions
 //setScreenWriter() sets writer's name, returns nothing, arugment is writer (string)
-void setScreenWriter(const string& writer) {
+void Movie::setScreenWriter(const string& writer) {
 	this->screenWriter = writer; 
 }
 //setYearReleased() sets the year released, returns nothing, arugment is year (int)
-void setYearReleased(const int year) {
+void Movie:: setYearReleased(const int year) {
 	this->yearReleased = year;
 }
 //setMovieTitle() sets movie title's name, returns nothing, arugment is title (string)
-void setMovieTitle(const string& movieTitle) {
+void Movie:: setMovieTitle(const string& movieTitle) {
 	this->movieTitle = movieTitle;
 }
 
@@ -103,8 +107,19 @@ bool readMovies(vector<Movie>& movies, const string& filename) {
 		return false;
 	}
 	string writer, title;
-	int year
+	int year;
+
+	//need to create a while loop that will read and populate the movie objects
+	while (getline(inputFile, writer) && (inputFile >> year), (inputFile.ignore()) && getline(inputFile, writer)) {
+		Movie tempMovie(writer, year, title);
+		movies.push_back(tempMovie);
+	}
+	inputFile.close();
+	return true;
 };
 void outputMovies(const vector <Movie>& movies) {
-	 
+	cout << "Movies List: " << endl;
+	for (const auto& movie : movies) {
+		movie.print();
+	}
 };
