@@ -58,3 +58,12 @@ Movie::Movie(const string& writer, int year, const string& title):
 void setScreenWriter(const string& writer) {
 	this->screenWriter = writer; 
 }
+//setYearReleased() sets the year released, returns nothing, arugment is year (int)
+void setYearReleased(const int year) {
+	this->yearReleased = year;
+}
+
+//setMovieTitle() sets movie title's name, returns nothing, arugment is title (string)
+void setMovieTitle(const string& movieTitle) {
+	this->movieTitle = movieTitle;
+}
