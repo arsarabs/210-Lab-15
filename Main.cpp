@@ -80,15 +80,15 @@ void Movie:: setMovieTitle(const string& movieTitle) {
 //STEP #2c: Getter Definitions
 //getScreenWriter() returns screen writer name, has no arguments
 string Movie::getScreenWriter() const {
-	return;
+	return screenWriter;
 }
 //getYearReleased() returns year released, has no arguments
 int Movie::getYearReleased() const {
-	return;
+	return yearReleased;
 }
 //getMovieTitle() returns movie title, has no arguments
 string Movie::getMovieTitle() const {
-	return;
+	return movieTitle;
 }
 //STEP #2d: Print() outputs the detials of said movie, 
 //and it doesnt have any arguments nor does it return anything
