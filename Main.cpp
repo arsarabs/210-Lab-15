@@ -44,13 +44,14 @@ void outputMovies(const vector <Movie>& movies);
 
 //STEP 4: main()
 int main() {
-	vector <Movie> movies;
+	vector <Movie> movies; //This is our vector to store the Movie objects 
 
+	//And now we attempt to read movie data from our input file
 	if (!readMovies(movies, FILE_INPUT)) {
 		cout << "Failed to load movies from file " << endl;
-		return 1;
+		return 1; // and it exits the program if file can't be read
 	}
-	outputMovies(movies);
+	outputMovies(movies); // call the function to output list of movies
 	return 0;
 }
 
@@ -102,10 +103,12 @@ void Movie::print() const {
 bool readMovies(vector<Movie>& movies, const string& filename) {
 	ifstream inputFile(filename);
 
+	//File Input Validation
 	if (!inputFile) {
 		cout << "ERROR! Can't open file " << filename << endl;
 		return false;
 	}
+
 	string writer, title;
 	int year;
 
@@ -114,11 +117,13 @@ bool readMovies(vector<Movie>& movies, const string& filename) {
 		Movie tempMovie(title, year, writer);
 		movies.push_back(tempMovie);
 	}
-	inputFile.close();
+	inputFile.close(); // close the file
 	return true;
 };
+//STEP #3c:outputMovies function: main purpose is to simply output/display using auto&
 void outputMovies(const vector <Movie>& movies) {
-	cout << "Movies List: " << endl;
+	cout << "Movies List! " << endl;
+	//Using auto& to iterate and output
 	for (const auto& movie : movies) {
 		movie.print();
 	}
