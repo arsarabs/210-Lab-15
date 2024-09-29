@@ -106,5 +106,5 @@ bool readMovies(vector<Movie>& movies, const string& filename) {
 	int year
 };
 void outputMovies(const vector <Movie>& movies) {
-
+	 
 };
