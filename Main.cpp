@@ -4,7 +4,7 @@
 #include <vector>
 #include <fstream>
 #include <string>
-
+ 
 using namespace std;
 
 //Define constant
@@ -95,13 +95,13 @@ string Movie::getMovieTitle() const {
 //and it doesnt have any arguments nor does it return anything
 void Movie::print() const {
 	cout << "Movie: " << movieTitle << endl;
-	cout << "Year released: " << yearReleased << endl;
-	cout << "Screenwriter: " << screenWriter << endl;
+	cout << "	Year released: " << yearReleased << endl;
+	cout << "	Screenwriter: " << screenWriter << endl;
 }
 
 //STEP #3b: Function Definitions for reading from file and outputting 
 bool readMovies(vector<Movie>& movies, const string& filename) {
-	ifstream inputFile(filename);
+	ifstream inputFile(filename); 
 
 	//File Input Validation
 	if (!inputFile) {
@@ -122,7 +122,7 @@ bool readMovies(vector<Movie>& movies, const string& filename) {
 };
 //STEP #3c:outputMovies function: main purpose is to simply output/display using auto&
 void outputMovies(const vector <Movie>& movies) {
-	cout << "Movies List! " << endl;
+	
 	//Using auto& to iterate and output
 	for (const auto& movie : movies) {
 		movie.print();
