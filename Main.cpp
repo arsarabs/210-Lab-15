@@ -61,8 +61,8 @@ Movie::Movie() : yearReleased(0) {}
 
 //Now, let's create a Movie() parameterized constructor arguments: screen writer (string), year released (int), movie title (string)
 //also, it doesn't return anything
-Movie::Movie(const string& title, int year, const string& writer):
-	movieTitle(title), yearReleased(year), screenWriter(writer) {}
+Movie::Movie(const string& writer, int year, const string& title)
+	: screenWriter(writer), yearReleased(year), movieTitle(title) {}
 
 //STEP #2b: Setter Definitions
 //setScreenWriter() sets writer's name, returns nothing, arugment is writer (string)
@@ -77,7 +77,7 @@ void Movie:: setYearReleased(const int year) {
 void Movie:: setMovieTitle(const string& movieTitle) {
 	this->movieTitle = movieTitle;
 }
-
+ 
 //STEP #2c: Getter Definitions
 //getScreenWriter() returns screen writer name, has no arguments
 string Movie::getScreenWriter() const {
